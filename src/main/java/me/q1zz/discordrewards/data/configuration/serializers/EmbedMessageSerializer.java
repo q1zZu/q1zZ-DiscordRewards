@@ -57,7 +57,7 @@ public class EmbedMessageSerializer implements ObjectSerializer<MessageEmbed> {
         embedBuilder.setColor(Color.decode(color));
 
         if(thumbnail_url != null && thumbnail_url.length() > 0) embedBuilder.setThumbnail(thumbnail_url);
-        if(image_url != null && image_url.length() > 0) embedBuilder.setThumbnail(image_url);
+        if(image_url != null && image_url.length() > 0) embedBuilder.setImage(image_url);
 
         return embedBuilder.build();
     }
