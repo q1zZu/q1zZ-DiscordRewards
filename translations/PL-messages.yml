@@ -1,0 +1,31 @@
+# PL: Konfiguracja wiadomości embed.
+# EN: Embed messages configuration.
+embeds:
+  # EN: Wiadomość gdy użytkownik wpisze zły nick.
+  # EN: Message when user entered wrong nickname.
+  wrongNickname:
+    title: BŁĄD!
+    description: '{MENTION} > Podałeś zły nick!'
+    color: '#ff0000'
+    thumbnail_url: https://i.imgur.com/ZvUyyic.png
+  # PL: Wiadomość gdy gracz jest offline.
+  # EN: Message when player is offline.
+  playerOffline:
+    title: BŁĄD!
+    description: '{MENTION} > Musisz być online na serwerze!'
+    color: '#ff0000'
+    thumbnail_url: https://i.imgur.com/ZvUyyic.png
+  # PL: Wiadomość gdy użytkownik już odebrał nagrodę.
+  # EN: Message when user already received reward.
+  alreadyReceived:
+    title: BŁĄD!
+    description: '{MENTION} > Nagroda została już odebrana!'
+    color: '#ff0000'
+    thumbnail_url: https://i.imgur.com/ZvUyyic.png
+  # PL: Wiadomość gdy nagroda została pomyślnie odebrana.
+  # EN: Message when reward has been successfully received.
+  successfullyReceived:
+    title: SUKCES!
+    description: '{MENTION} > Pomyślnie odebrałeś nagrodę dla **{NICK}**!'
+    color: '#00ff00'
+    thumbnail_url: https://i.imgur.com/ax7t35s.png
