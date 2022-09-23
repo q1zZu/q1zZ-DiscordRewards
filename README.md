@@ -39,4 +39,4 @@
 - Email: [q1zZ@zetcraft.pl](mailto:q1zZ@zetcraft.pl)
 
 # Links
-- [SpigotMC](https://www.spigotmc.org/resources/q1zz-discordrewards.96024/)
+- [SpigotMC](https://www.spigotmc.org/resources/q1zz-discordrewards.96024/) 
