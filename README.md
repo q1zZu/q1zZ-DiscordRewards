@@ -33,7 +33,7 @@
 - [configuration.yml](https://pastebin.com/uBBu06bS)
 - [messages.yml](https://pastebin.com/PXMJhCY8)
 # Translations
-- (Polski/Polish) [messages.yml](https://pastebin.com/tEFk1Nvi)
+- (Polski/Polish) [messages.yml](https://github.com/q1zZu/q1zZ-DiscordRewards/blob/main/translations/PL-messages.yml)
 # Support
 - Discord: [Q-CODES](https://discord.gg/WzM9TU4YvH) (Create ticket)
 - Email: [q1zZ@zetcraft.pl](mailto:q1zZ@zetcraft.pl)
