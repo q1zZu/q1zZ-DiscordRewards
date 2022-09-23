@@ -1,0 +1,8 @@
+name: q1zZ-DiscordRewards
+main: me.q1zz.discordrewards.DiscordRewardsPlugin
+version: 0.5
+description: Simple plugin for receiving reward for join to discord server.
+website: https://github.com/q1zZu
+commands:
+  dcReload:
+    aliases: [discordReload, discordRewardsReload, q1zz-reload, q1zzReload]
