@@ -10,6 +10,8 @@ import me.q1zz.discordrewards.user.User;
 import me.q1zz.discordrewards.user.UserManager;
 import me.q1zz.discordrewards.helper.RoleHelper;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.entities.channel.ChannelType;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;

@@ -41,7 +41,7 @@ public class BotManager {
             this.jda.awaitReady();
 
             logger.info("Discord bot was successfully started!");
-        } catch (LoginException | InterruptedException e) {
+        } catch (InterruptedException e) {
             logger.severe("Error while starting discord bot...");
             e.printStackTrace();
             Bukkit.getPluginManager().disablePlugin(discordRewardsPlugin);
