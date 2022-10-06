@@ -10,9 +10,9 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.bukkit.Bukkit;
 
-import javax.security.auth.login.LoginException;
 import java.util.logging.Logger;
 
 public class BotManager {
@@ -30,6 +30,8 @@ public class BotManager {
             JDABuilder builder = JDABuilder.createDefault(token);
 
             Message.suppressContentIntentWarning();
+
+            builder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
 
             this.jda = builder.build();
 
