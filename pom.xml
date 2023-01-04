@@ -54,7 +54,7 @@
         <dependency>
             <groupId>eu.okaeri</groupId>
             <artifactId>okaeri-configs-yaml-bukkit</artifactId>
-            <version>4.0.6</version>
+            <version>4.0.9</version>
         </dependency>
         <dependency>
             <groupId>eu.okaeri</groupId>
