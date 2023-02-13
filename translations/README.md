@@ -1,5 +1,5 @@
 # Translations
-- [Polski/Polish](/PL-messages.yml)
+- [Polski/Polish](/translations/PL-messages.yml)
 
 # Community translations
 
