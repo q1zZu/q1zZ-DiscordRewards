@@ -4,7 +4,7 @@ import eu.okaeri.configs.OkaeriConfig;
 import eu.okaeri.configs.annotation.Comment;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import me.q1zz.discordrewards.helper.ItemHelper;
+import me.q1zz.discordrewards.helper.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -13,7 +13,6 @@ import org.bukkit.inventory.ItemStack;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @EqualsAndHashCode(callSuper = false)
 @Data
@@ -38,7 +37,7 @@ public class RewardSection extends OkaeriConfig {
 
     @Comment("PL: Przedmioty które zostaną nadane po odbiorze nagrody.")
     @Comment("EN: Items that will be added to player when receive reward.")
-    private List<ItemStack> items = Collections.singletonList(new ItemHelper(Material.EMERALD)
+    private List<ItemStack> items = Collections.singletonList(new ItemBuilder(Material.EMERALD)
                     .name("&2&lEMERALD")
                     .lore(" ", "&aReward emerald!", " ")
                     .enchant(Enchantment.DURABILITY, 1)

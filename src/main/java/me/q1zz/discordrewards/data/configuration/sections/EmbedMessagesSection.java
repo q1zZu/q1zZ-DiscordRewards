@@ -23,6 +23,7 @@ public class EmbedMessagesSection extends OkaeriConfig {
             .setDescription("{MENTION} > You entered the wrong nickname!")
             .setColor(Color.RED)
             .setThumbnail("https://i.imgur.com/ZvUyyic.png")
+            .setFooter("An error occurred...", "https://i.imgur.com/ZvUyyic.png")
             .build();
 
     @Comment("PL: Wiadomość gdy gracz jest offline.")
@@ -32,6 +33,7 @@ public class EmbedMessagesSection extends OkaeriConfig {
             .setDescription("{MENTION} > You must be online on the server!")
             .setColor(Color.RED)
             .setThumbnail("https://i.imgur.com/ZvUyyic.png")
+            .setFooter("An error occurred...", "https://i.imgur.com/ZvUyyic.png")
             .build();
 
     @Comment("PL: Wiadomość gdy użytkownik już odebrał nagrodę.")
@@ -41,6 +43,7 @@ public class EmbedMessagesSection extends OkaeriConfig {
             .setDescription("{MENTION} > Reward already been received!")
             .setColor(Color.RED)
             .setThumbnail("https://i.imgur.com/ZvUyyic.png")
+            .setFooter("An error occurred...", "https://i.imgur.com/ZvUyyic.png")
             .build();
 
     @Comment("PL: Wiadomość gdy nagroda została pomyślnie odebrana.")

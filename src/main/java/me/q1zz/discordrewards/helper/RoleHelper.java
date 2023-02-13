@@ -26,9 +26,8 @@ public class RoleHelper {
         });
     }
 
-    public boolean hasRole(Member member, Role memberRole) {
-        Role findRole = member.getRoles().stream().filter(role -> role.getId().equals(memberRole.getId())).findFirst().orElse(null);
-        return findRole != null;
+    public boolean hasRole(Member member, Role role) {
+        return member.getRoles().contains(role);
     }
 
 }

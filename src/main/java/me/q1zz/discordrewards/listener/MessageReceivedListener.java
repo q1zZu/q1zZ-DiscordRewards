@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import me.q1zz.discordrewards.DiscordRewardsPlugin;
 import me.q1zz.discordrewards.data.configuration.MessagesConfiguration;
 import me.q1zz.discordrewards.data.configuration.PluginConfiguration;
-import me.q1zz.discordrewards.helper.ItemHelper;
+import me.q1zz.discordrewards.helper.ItemBuilder;
 import me.q1zz.discordrewards.helper.MessageHelper;
 import me.q1zz.discordrewards.user.User;
 import me.q1zz.discordrewards.user.UserManager;
@@ -77,9 +77,9 @@ public class MessageReceivedListener extends ListenerAdapter {
 
                         this.pluginConfiguration.getRewards().getCommands().forEach(command -> Bukkit.getScheduler().runTask(this.plugin, () -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{PLAYER}", player.getName()))));
 
-                        this.pluginConfiguration.getRewards().getItems().forEach(item -> new ItemHelper(item).addItem(player));
+                        this.pluginConfiguration.getRewards().getItems().forEach(item -> Bukkit.getScheduler().runTask(this.plugin, () -> new ItemBuilder(item, player).refreshLore().addItem(player)));
 
-                        this.pluginConfiguration.getRewards().getBroadcast().forEach(broadcast -> Bukkit.broadcastMessage(MessageHelper.fixColor(broadcast.replace("{PLAYER}", player.getName()))));
+                        this.pluginConfiguration.getRewards().getBroadcast().forEach(broadcast -> Bukkit.broadcastMessage(MessageHelper.fixWithPlaceholders(player, broadcast.replace("{PLAYER}", player.getName()))));
 
                         RoleHelper.addRoles(event.getGuild(), member, this.pluginConfiguration.getRewards().getRoles(), this.logger);
 

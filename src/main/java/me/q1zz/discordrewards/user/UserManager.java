@@ -18,11 +18,25 @@ public class UserManager {
             .expireAfterWrite(15, TimeUnit.MINUTES)
             .build();
 
-    public User getUser(UUID uniqueID, long discordAccountID) {
-        User user = this.usersCache.asMap().values().stream().filter(filterUser -> filterUser.getUniqueID().equals(uniqueID) || filterUser.getDiscordAccountID() == discordAccountID).findFirst().orElse(null);
+    private User getCachedUser(UUID uniqueId, long discordAccountId) {
+        if(this.usersCache.asMap().containsKey(uniqueId)) {
+            return this.usersCache.getIfPresent(uniqueId);
+        }
+        return this.usersCache.asMap().values().stream().filter(user -> user.getDiscordAccountID() == discordAccountId).findFirst().orElse(null);
+    }
+
+    private void putToCache(User user) {
         if(user == null) {
-            user = this.database.loadData(uniqueID, discordAccountID);
-            if(user != null) this.usersCache.put(uniqueID, user);
+            return;
+        }
+        this.usersCache.put(user.getUniqueID(), user);
+    }
+
+    public User getUser(UUID uniqueID, long discordAccountId) {
+        User user = this.getCachedUser(uniqueID, discordAccountId);
+        if(user == null) {
+            user = this.database.loadData(uniqueID, discordAccountId);
+            this.putToCache(user);
         }
         return user;
     }

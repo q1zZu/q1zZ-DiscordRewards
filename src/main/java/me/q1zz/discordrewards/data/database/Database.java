@@ -57,15 +57,23 @@ public class Database {
     }
 
     public Connection getConnection() throws SQLException {
-        if (connection == null || connection.isClosed()) {
-            connection = dataSource.getConnection();
+        if (this.connection == null || this.connection.isClosed()) {
+            this.connection = this.dataSource.getConnection();
         }
-        return connection;
+        return this.connection;
     }
 
     public void closeConnection() {
-        if(this.dataSource != null && !this.dataSource.isClosed()) {
-            this.dataSource.close();
+        try {
+            if(this.connection != null && !this.connection.isClosed()) {
+                this.connection.close();
+            }
+            if(this.dataSource != null && !this.dataSource.isClosed()) {
+                this.dataSource.close();
+            }
+        } catch (SQLException e) {
+            this.logger.severe("Error while closing database connection...");
+            e.printStackTrace();
         }
     }
 

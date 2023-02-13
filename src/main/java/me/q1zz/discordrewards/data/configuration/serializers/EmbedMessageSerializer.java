@@ -39,6 +39,10 @@ public class EmbedMessageSerializer implements ObjectSerializer<MessageEmbed> {
             data.add("image_url", embedMessage.getImage().getUrl());
         }
 
+        if(embedMessage.getFooter() != null) {
+            data.add("footer", embedMessage.getFooter(), MessageEmbed.Footer.class);
+        }
+
     }
 
     @Override
@@ -58,6 +62,14 @@ public class EmbedMessageSerializer implements ObjectSerializer<MessageEmbed> {
 
         if(thumbnail_url != null && thumbnail_url.length() > 0) embedBuilder.setThumbnail(thumbnail_url);
         if(image_url != null && image_url.length() > 0) embedBuilder.setImage(image_url);
+
+        if(data.containsKey("footer")) {
+
+            MessageEmbed.Footer footer = data.get("footer", MessageEmbed.Footer.class);
+
+            embedBuilder.setFooter(footer.getText(), footer.getIconUrl());
+
+        }
 
         return embedBuilder.build();
     }

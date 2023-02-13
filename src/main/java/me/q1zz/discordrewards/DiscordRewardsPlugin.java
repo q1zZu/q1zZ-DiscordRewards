@@ -8,6 +8,7 @@ import me.q1zz.discordrewards.bStats.Metrics;
 import me.q1zz.discordrewards.command.ReloadCommand;
 import me.q1zz.discordrewards.data.configuration.MessagesConfiguration;
 import me.q1zz.discordrewards.data.configuration.PluginConfiguration;
+import me.q1zz.discordrewards.data.configuration.serializers.EmbedFooterSerializer;
 import me.q1zz.discordrewards.data.configuration.serializers.EmbedMessageSerializer;
 import me.q1zz.discordrewards.data.database.Database;
 import me.q1zz.discordrewards.discord.BotManager;
@@ -62,7 +63,10 @@ public class DiscordRewardsPlugin extends JavaPlugin {
             it.load(true);
         });
         this.messagesConfiguration = ConfigManager.create(MessagesConfiguration.class, (it) -> {
-            it.withConfigurer(new YamlBukkitConfigurer(SectionSeparator.NEW_LINE), registry -> registry.register(new EmbedMessageSerializer()));
+            it.withConfigurer(new YamlBukkitConfigurer(SectionSeparator.NEW_LINE), registry -> {
+                registry.register(new EmbedFooterSerializer());
+                registry.register(new EmbedMessageSerializer());
+            });
             it.withBindFile(new File(this.getDataFolder(), "messages.yml"));
             it.saveDefaults();
             it.withRemoveOrphans(true);
