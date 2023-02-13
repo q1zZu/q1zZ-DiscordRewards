@@ -27,7 +27,7 @@
 # Permissions
 - **discordRewards.reload** - Access to reload command.
 # Requirements
-- Java 16+
+- Java 17+
 - Spigot 1.16+
 # Configuration
 - [configuration.yml](https://pastebin.com/uBBu06bS)
