@@ -15,6 +15,6 @@ public class BotSection extends OkaeriConfig {
 
     @Comment("PL: Status bota")
     @Comment("EN: Bot status")
-    private String status = "q1zZ-DiscordRewards v0.5";
+    private String status = "q1zZ-DiscordRewards v0.6";
 
 }

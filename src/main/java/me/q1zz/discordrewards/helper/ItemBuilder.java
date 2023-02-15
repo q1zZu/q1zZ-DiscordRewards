@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 
 public class ItemBuilder {
 
-    private final ItemStack itemStack;
     private final Player player;
+    private ItemStack itemStack;
 
     public ItemBuilder(Material material) {
         this.itemStack = new ItemStack(material);
@@ -41,11 +41,13 @@ public class ItemBuilder {
     }
 
     public ItemBuilder refreshLore() {
-        ItemMeta itemMeta = this.itemStack.getItemMeta();
+        ItemStack item = new ItemStack(this.itemStack);
+        ItemMeta itemMeta = item.getItemMeta();
         if(itemMeta == null) return this;
         if(!itemMeta.hasLore()) return this;
         itemMeta.setLore(itemMeta.getLore().stream().map(line -> MessageHelper.fixWithPlaceholders(this.player, line)).collect(Collectors.toList()));
-        this.itemStack.setItemMeta(itemMeta);
+        item.setItemMeta(itemMeta);
+        this.itemStack = item;
         return this;
     }
 
