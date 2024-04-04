@@ -1,3 +1,5 @@
+> 📌 This plugin will will be rewrited soon!
+
 # About the plugin
 - **q1zZ-DiscordRewards** is a plugin that allows players to receive rewards for joining a discord server.
 # Features
